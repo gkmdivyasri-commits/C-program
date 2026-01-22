@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int totalStudents, absentStudents, presentStudents;
+
+    printf("Enter total number of students: ");
+    scanf("%d", &totalStudents);
+
+    printf("Enter number of absent students: ");
+    scanf("%d", &absentStudents);
+
+    presentStudents = totalStudents - absentStudents;
+
+    printf("Number of present students = %d\n", presentStudents);
+
+    return 0;
+}

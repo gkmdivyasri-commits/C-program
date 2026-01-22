@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h> // For toupper()
+
+int main() {
+    char str[100];
+    int i = 0;
+
+    // Input string from user
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Convert each character to uppercase
+    while (str[i]) {
+        str[i] = toupper(str[i]);
+        i++;
+    }
+
+    // Output the result
+    printf("Uppercase string: %s", str);
+
+    return 0;
+}

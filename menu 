@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+// Function to display the menu
+void displayMenu() {
+    printf("===== Main Menu =====\n");
+    printf("1. Add Item\n");
+    printf("2. Delete Item\n");
+    printf("3. View Items\n");
+    printf("4. Exit\n");
+    printf("=====================\n");
+}
+
+int main() {
+    int choice;
+
+    do {
+        // Call the function to display the menu
+        displayMenu();
+
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        // Handle the menu choice
+        switch(choice) {
+            case 1:
+                printf("You selected Add Item.\n\n");
+                break;
+            case 2:
+                printf("You selected Delete Item.\n\n");
+                break;
+            case 3:
+                printf("You selected View Items.\n\n");
+                break;
+            case 4:
+                printf("Exiting program...\n");
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n\n");
+        }
+    } while(choice != 4);
+
+    return 0;
+}

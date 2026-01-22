@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <ctype.h>  // For tolower() function
+
+int main() {
+    char str[100];
+    int i, count = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  // Read a line of text
+
+    for(i = 0; str[i] != '\0'; i++) {
+        char ch = tolower(str[i]);  // Convert to lowercase for simplicity
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            count++;
+        }
+    }
+
+    printf("Number of vowels: %d\n", count);
+
+    return 0;
+}

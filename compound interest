@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    double principal, rate, time, amount, ci;
+
+    // Input from user
+    printf("Enter principal amount: ");
+    scanf("%lf", &principal);
+
+    printf("Enter annual interest rate (in %%): ");
+    scanf("%lf", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%lf", &time);
+
+    // Calculate compound interest: A = P * (1 + r/100)^t
+    amount = principal;
+    for(int i = 0; i < time; i++) {
+        amount = amount + (amount * rate / 100);
+    }
+
+    ci = amount - principal;
+
+    printf("Compound Interest = %.2lf\n", ci);
+    printf("Total Amount = %.2lf\n", amount);
+
+    return 0;
+}

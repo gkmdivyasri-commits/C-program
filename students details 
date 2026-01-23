@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    char name[50];
+    int rollNo;
+    float marks;
+};
+
+int main() {
+    FILE *file;
+    struct Student s;
+    char choice;
+
+    // Open file in append mode
+    file = fopen("students.txt", "a");
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+
+    do {
+        // Input student details
+        printf("Enter student name: ");
+        scanf(" %[^\n]", s.name); // %[^\n] to read string with spaces
+
+        printf("Enter roll number: ");
+        scanf("%d", &s.rollNo);
+
+        printf("Enter marks: ");
+        scanf("%f", &s.marks);
+
+        // Write details to file
+        fprintf(file, "Name: %s, Roll No: %d, Marks: %.2f\n", s.name, s.rollNo, s.marks);
+
+        printf("Do you want to enter another student? (y/n): ");
+        scanf(" %c", &choice);
+
+    } while (choice == 'y' || choice == 'Y');
+
+    fclose(file);
+    printf("Student details saved to file successfully.\n");
+
+    return 0;
+}
